@@ -1,7 +1,12 @@
+//Including the header files
 #include <stdio.h>
 
-int main(void) {
+int main() {
+    //Declaring required variables
     int N, i, sum = 0;
+
+    //Printing name and register number
+    printf("Akilan K\n126018002\n\n");
 
     // Read the value of N
     printf("Enter the value of N: ");

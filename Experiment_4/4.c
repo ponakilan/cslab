@@ -8,7 +8,7 @@ int main() {
   printf("Enter a positive integer: ");
   scanf("%d", &n);
 
-  int result = sumOfNaturalNumbers(n);
+  int result = sum(n);
   printf("Sum of first %d natural numbers = %d\n", n, result);
 
   return 0;

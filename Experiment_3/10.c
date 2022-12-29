@@ -12,7 +12,7 @@ int main() {
 
     printf("Prime numbers from %d to %d: ", a, b);
     for (i=a; i<=b; i++) {
-        for (j=2; j<i/2; j++) {
+        for (j=2; j<=i/2; j++) {
             if (i%j != 0)
                 printf("%d ", i);
                 break;

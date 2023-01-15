@@ -27,7 +27,7 @@ int print_addpolynomial(struct addpolynomial p[], int
 		printf("%+dX%d ", p[i].coef, p[i].exp);
 	return 0;
 }
-//function to ad polynomials
+//function to add polynomials
 int add_addpolynomial( p1, p2, p3, max1, max2)
 struct addpolynomial p1[], p2[], p3[];
 int max1, max2;
@@ -76,6 +76,6 @@ void main() {
 	print_addpolynomial(p1, max1);
 	printf("\nSecond addpolynomial is ");
 	print_addpolynomial(p2, max2);
-	printf("\n The resultant addpolynomial after addition is");
+	printf("\n The resultant addpolynomial after addition is ");
 	print_addpolynomial(p3, max3);
 }

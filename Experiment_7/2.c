@@ -28,6 +28,5 @@ void main()
 	printf("\ndetails in ascending order\n");
 	printf("\nName\tage\tmatches\truns\tavg_run");
 	for (i = 0; i < n; i++)
-		printf("\n%s\t%d\t%d\t%d\t%f", cri[i].name, cri[i].age,
-		       cri[i].nmatch, cri[i].run, cri[i].avgrun);
+		printf("\n%s\t%d\t%d\t%d\t%f", cri[i].name, cri[i].age, cri[i].nmatch, cri[i].run, cri[i].avgrun);
 }

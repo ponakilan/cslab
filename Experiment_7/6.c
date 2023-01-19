@@ -22,12 +22,11 @@ void main()
 	printf("= %d:%d:%d\n", diff.hours, diff.minutes, diff.seconds);
 }
 
-void Difference(struct TIME t1, struct TIME t2, struct
-                TIME *differ)
+void Difference(struct TIME t1, struct TIME t2, struct TIME *differ)
 {	if (t2.seconds > t1.seconds)
 	{	--t1.minutes;
 		t1.seconds += 60;
-	}
+	}	
 	differ->seconds = t1.seconds - t2.seconds;
 	if (t2.minutes > t1.minutes)
 	{	--t1.hours;

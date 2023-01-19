@@ -1,22 +1,21 @@
 #include<stdio.h>
+int string_ln(char*);
 
 void main()
 {	
-	char str[50], rev[50];
-	char *sptr = str, *rptr = rev;
-	int i = -1;
-	printf("Enter any word : ");
-	scanf("%s", str);
-	while (*sptr) {
-		sptr++;
-		i++;
+	char str[20];
+	int l;
+	printf("Enter any string: ");
+	gets(str);
+	l = string_ln(str);
+	printf("The length of the given string %s is : %d", str, l);
+}
+
+int string_ln(char*p) /* p=&str[0] */
+{	int count = 0;
+	while (*p != '\0')
+	{	count++;
+		p++;
 	}
-	while (i >= 0)
-	{	sptr--;
-		*rptr = *sptr;
-		rptr++;
-		--i;
-	}
-	*rptr = '\0';
-	printf("Reverse of string is : %s", rev);
+	return count;
 }

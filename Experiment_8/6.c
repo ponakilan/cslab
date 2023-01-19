@@ -1,21 +1,55 @@
 #include<stdio.h>
-int string_ln(char*);
-
+#include<stdlib.h>
+#include<ctype.h>
+/*low implies that position of pointer is within a
+word*/
+#define low 1
+/*high implies that position of pointer is out of word.*/
+#define high 0
 void main()
-{	
-	char str[20];
-	int l;
-	printf("Enter any string: ");
-	gets(str);
-	l = string_ln(str);
-	printf("The length of the given string %s is : %d", str, l);
-}
-
-int string_ln(char*p) /* p=&str[0] */
-{	int count = 0;
-	while (*p != '\0')
-	{	count++;
-		p++;
+{
+	int nob, now, nod, nov, nos, pos = high;
+	char *s, string[25];
+	nob = now = nod = nov = nos = 0;
+	printf("Enter any string:");
+	gets(string);
+	s = string;
+	while (*s != '\0')
+	{
+		if (*s == ' ') /* counting number of blank spaces. */
+		{	pos = high;
+			++nob;
+		}
+		else if (pos == high) /* counting number of words. */
+		{	pos = low;
+			++now;
+		}
+		if (isdigit(*s)) /* counting number of digits. */
+			++nod;
+		if (isalpha(*s)) /* counting number of vowels */
+			switch (*s)
+			{
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+			case 'A':
+			case 'E':
+			case 'I':
+			case 'O':
+			case 'U':
+				++nov;
+				break;
+			}
+		/* counting number of special characters */
+		if (!isdigit(*s) && !isalpha(*s))
+			++nos;
+		s++;
 	}
-	return count;
+	printf("\nNumber of words %d", now);
+	printf("\nNumber of spaces %d", nob);
+	printf("\nNumber of vowels %d", nov);
+	printf("\nNumber of digits %d", nod);
+	printf("\nNumber of special characters %d", nos);
 }

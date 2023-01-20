@@ -1,24 +1,25 @@
-#include<stdio.h>
+#include <stdio.h>
 
-void sort(int size, int *p);
+struct Distance
+{	
+	int feet; float inch;
+}d1, d2, sum;
+
 
 void main()
-{
-	int i, a[8] = {11, 2, 34, 57, 890, 44, 33, 22};
-	sort(8, a);
-	for (i = 0; i < 8; i++)
-		printf("\n%d", a[i]);
-}
-
-void sort(int size, int *p)
-{	int j, t, i;
-	for (i = 0; i < size; i++)
-	{	for (j = i + 1; j < size; j++)
-		{	if (*(p + i) > *(p + j))
-			{	t = *(p + i);
-				*(p + i) = *(p + j);
-				*(p + j) = t;
-			}
-		}
+{	
+	printf("Enter information for 1st distance\n");
+	printf("Enter feet: "); scanf("%d", &d1.feet);
+	printf("Enter inch: "); scanf("%f", &d1.inch);
+	printf("\nEnter infromation for 2nd distance\n");
+	printf("Enter feet: "); scanf("%d", &d2.feet);
+	printf("Enter inch: "); scanf("%f", &d2.inch);
+	sum.feet = d1.feet + d2.feet;
+	sum.inch = d1.inch + d2.inch; /* If inch is greater than 12,
+changing it to feet. */
+	if (sum.inch > 12.0)
+	{	sum.inch = sum.inch - 12.0;
+		++sum.feet;
 	}
+	printf("\nSum of distances=%d\'%.1f\"\"", sum.feet, sum.inch);
 }
